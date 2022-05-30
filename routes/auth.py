@@ -1,7 +1,15 @@
+
 from models.users import Users
 from models.logins import Logins
 from flask import Blueprint, redirect,render_template, request, url_for,flash
 from utils.db import db
+from flask_login import login_user, logout_user,login_required
+from app import login_mannager_app
+
+@login_mannager_app.user_loader
+def get_id(id):
+    return Logins.get_id(id)
+
 
 auth = Blueprint('auth',__name__)
 
@@ -13,11 +21,13 @@ def index():
 @auth.route('/login',methods = ['GET','POST'])
 def login():
     if request.method == 'POST':
-        user = Users(request.form['username'],request.form['password'],'','')
-        logged_user = Logins.login(db,user)
+        user = Users(0,request.form['username'],request.form['password'],'','')
+        logged_user = Logins.login(user)
         if logged_user != None:
             if logged_user.password:
-                return redirect(url_for('auth.home'))
+
+                login_user(logged_user)
+                return redirect(url_for('users.home'))
             else:
                 flash("Invalid password...")
                 return render_template('auth/login.html')
@@ -48,6 +58,9 @@ def register():
     else:
         return render_template("auth/register.html")
 
-@auth.route('/home')
-def home():
-    return render_template('users/home.html')
+@auth.route('/logout')
+def logout():
+    logout_user()
+    return redirect('/login')
+
+

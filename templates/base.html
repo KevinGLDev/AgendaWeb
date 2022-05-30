@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> {% block title %} {% endblock %}</title> 
+    
+    <link rel="stylesheet" href="/static/Users/pNavegacion.css">
+    {%block customcss%} {% endblock %}
+    
+</head>
+<body>
+    <header>  
+        
+        <div class = "logo-header">
+            <img src="recursos/logo_flor.jpg" height="40px" width="40px">
+        </div>
+        <nav class = "nav-menu">
+            <ul>
+                
+                <h1>DREAMNOTE</h1>
+                <li><a href="{{ url_for('users.pendientes'}}">Pendientes</a></li>
+                <li><a href="{{ url_for('users.notas')}}">Notas</a></li>
+                <li><a href="{{ url_for('users.perfil') }}">Perfil</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    {% block bodycontent%}
+    {% endblock %}
+</body>
+</html>
