@@ -50,7 +50,7 @@ def register():
 
         password_hashed = Users.generate_password(password)
 
-        new_user = Users(username,password_hashed,fullname,email)
+        new_user = Users(0,username,password_hashed,fullname,email)
         db.session.add(new_user)
         db.session.commit()
         flash("Seccessful Registration")

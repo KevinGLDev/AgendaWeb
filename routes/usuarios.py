@@ -12,7 +12,7 @@ def home():
 
 @users.route('/host/pendientes',methods=['GET'])
 @login_required
-def pendientes(fullname):
+def pendientes():
     return render_template('users/pendientes.html')
 
 @users.route('/home/notas',methods=['GET'])

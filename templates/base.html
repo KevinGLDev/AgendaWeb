@@ -8,19 +8,21 @@
     
     <link rel="stylesheet" href="/static/Users/pNavegacion.css">
     {%block customcss%} {% endblock %}
-    
+   
 </head>
 <body>
-    <header>  
+    <header class="body-header">  
         
         <div class = "logo-header">
-            <img src="recursos/logo_flor.jpg" height="40px" width="40px">
+            
+            <img src="../templates/recursos/logos.jpg" alt="" height="40px" width="40px">
         </div>
         <nav class = "nav-menu">
             <ul>
                 
-                <h1>DREAMNOTE</h1>
-                <li><a href="{{ url_for('users.pendientes'}}">Pendientes</a></li>
+                <h1 >DREAMNOTE</h1>
+                <li><a href="{{ url_for('users.home')}}">Home</a></li>
+                <li><a href="{{ url_for('users.pendientes')}}">Pendientes</a></li>
                 <li><a href="{{ url_for('users.notas')}}">Notas</a></li>
                 <li><a href="{{ url_for('users.perfil') }}">Perfil</a></li>
                 <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
