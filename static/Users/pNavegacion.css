@@ -7,8 +7,10 @@
 
 }
 
+
+
 body{
-    background-color: #1C2833;
+    background-color: rgb(39, 38, 38);
 
 }
 
@@ -20,10 +22,11 @@ a, li{
 }
 
 .logo-header img{
-    width: 50px;
+    height: 35px;
+    width: 35px;
     display: flex;
     align-items: center;
-}
+    }
 
 .body-header{
     background-color: #222;
@@ -31,6 +34,7 @@ a, li{
     justify-content: space-between;
     align-items: center;
     padding: .5rem .1rem;
+    position: relative;
 }
 
 .nav-menu ul{

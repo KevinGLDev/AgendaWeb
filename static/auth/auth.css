@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 
 body{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background: #1C2833;
+    font-family: 'EB Garamond', serif;
+    background: #181818;
     
 }
 .box{
@@ -18,6 +16,7 @@ body{
     transform: translate(-50%,-50%);
     background: #191919;
     text-align: center;
+    box-shadow: 0 0 20px 0 rgba(247, 248, 248, 0.836);
     
 
 }
@@ -93,3 +92,15 @@ body{
 .alertGreen{
     background: #ABEBC6 ;
 }
+.bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -58%;
+    right: -20%;
+    top: -315%;
+    z-index: -100;
+    opacity: .4;
+    
+}
+

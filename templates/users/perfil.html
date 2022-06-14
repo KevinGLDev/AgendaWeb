@@ -1,11 +1,36 @@
 {% extends "base.html" %}
 
 
-  
+{%block customcss%}
+<link rel="stylesheet" href="../../static/Users/perfil.css">
+{% endblock %} 
 
 {% block bodycontent%}
-<h1>
-    PERFIL
-</h1>
+
+<div class="bg">
+    <video src="../../static/recursos/production ID_4999945.mp4" muted autoplay loop></video>
+    </div>
+<h1 class="title">DATOS DEL PERFIL</h1>
+<form class = "form" action="" method = "post">
+    
+    <div>
+        <label for="fullname">Fullname</label>
+        <input type="text" name="fullname" value="{{user.fullname}}" >
+    </div>
+    <div>
+        <label for="Username">Username</label>
+        <input type="text" name="username" value="{{user.username}}" >
+    </div>
+    <div>
+        <label for="Password">Password</label>
+        <input type="text" name="password" >
+    </div>
+    <div>
+        <label for="Email">Email</label>
+        <input type="text" name="email" value="{{user.email}}" >
+    </div>
+    <input type="submit" name="register" value="Guardar Cambios">
+</form>
+
 
 {% endblock %}

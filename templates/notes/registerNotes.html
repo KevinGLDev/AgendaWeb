@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS only BOOTSTRAP--> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../static/notes/registerNotes.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="bg">
+        <video src="../../static/recursos/Pexels Videos 2620.mp4" muted autoplay loop></video>
+        </div>
+    <form class = "box" action = "/home/notas/registro" method = "post">
+        <h1>Registro de Notas</h1>
+        {% with messages = get_flashed_messages() %}
+        {%if messages%}
+        {% for message in messages %}
+            <div class = 'alert'>
+                <strong>{{ message }}</strong>
+                <button  type = 'button' class = 'btn-close' data-bs-dismiss="alert" aria-label="Close" ></button>
+
+            </div>
+
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <input type="text" name="title" placeholder="Titulo">
+            <div class="contenido">
+                <input  type="text" name="content" placeholder="Contenido">
+            </div>
+        
+            </div>
+        
+
+            <div class="RadioButton">
+                <h4>Nivel de Importancia</h4>
+                <input type="radio" name="importancia" id="Alto" value="Alto">
+                <label for="Alto">Alto</label>
+                <input type="radio" name="importancia" id="Normal" value="Normal">
+                <label for="Normal">Normal</label>
+                <input type="radio" name="importancia" id="Bajo" value="Bajo">
+                <label for="Bajo" >Bajo</label>
+            </div>
+        
+        <input type="submit" name="create" value="Crear">
+        <a href="{{ url_for('users.notas')}}"><input type = "button" value="Regresar"></a>
+    </form>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

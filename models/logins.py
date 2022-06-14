@@ -28,11 +28,7 @@ class Logins():
             
             if verified_user.first() != None:   
                             
-                print('----------------------------')
-                print(verified_user[0].username)
-                print(verified_user[0].fullname)
-                print(verified_user[0].email)
-                print('----------------------------')
+                
                 return Users(verified_user[0].id,verified_user[0].username,None,verified_user[0].fullname,verified_user[0].email)
                
             else:

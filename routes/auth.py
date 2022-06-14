@@ -64,3 +64,7 @@ def logout():
     return redirect('/login')
 
 
+@auth.route('/prueba')
+def prueba():
+    return render_template('users/prueba.html')
+

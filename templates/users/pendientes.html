@@ -1,11 +1,41 @@
 {% extends "base.html" %}
 
 
+{%block customcss%}
+<link rel="stylesheet" href="../../static/Users/pendientes.css">
+{% endblock %}
   
 
 {% block bodycontent%}
-<h1>
-    PENDIENTES
-</h1>
+    <div class="bg">
+    <video src="../../static/recursos/pexels-payton-tuttle-10493080.mp4" muted autoplay loop></video>
+    </div>
+    
+    
+    <div class = "div-info">
+        <h1>LISTA DE PENDIENTES</h1>
+
+        <div class="div-btn">
+            <a href="{{ url_for('slopes.registerSlopes')}}"><input class="btn" type = "button" value="Crear Pendientes"></a>
+        </div>
+        {% for item in list %}
+            <div class="content">
+                <h3 class="block">{{item.title}}</h3>
+                <p class="block">{{item.content}}</p>
+                <p>
+                    Fecha de Creacion: 
+                    {{item.dateCreation}}</p>
+                <p>
+                    Fecha del Evento: 
+                    {{item.dateEnd}}</p>
+                <p class="block">
+                    Grado de Importancia: 
+                    {{item.importance}}</p>
+                <a href="{{ url_for('slopes.update',id = item.id)}}"><input class="btn" type = "button" value="Editar"></a>
+                <a href="{{ url_for('slopes.delete',id = item.id)}}"><input class="btn" type = "button" value="Eliminar"></a>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
+

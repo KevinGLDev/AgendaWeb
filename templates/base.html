@@ -5,32 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title> {% block title %} {% endblock %}</title> 
-    
+   {%block customcss%} {% endblock %}
     <link rel="stylesheet" href="/static/Users/pNavegacion.css">
-    {%block customcss%} {% endblock %}
+    
+    
    
 </head>
-<body>
-    <header class="body-header">  
+
+<header class="body-header">  
         
-        <div class = "logo-header">
+    
+    <nav class = "nav-menu">
+        <ul>
+            <div class = "logo-header">
+        
+                <img src="../static/recursos/solo1.png" alt="">
+                   
+            </div>
             
-            <img src="../templates/recursos/logos.jpg" alt="" height="40px" width="40px">
-        </div>
-        <nav class = "nav-menu">
-            <ul>
-                
-                <h1 >DREAMNOTE</h1>
-                <li><a href="{{ url_for('users.home')}}">Home</a></li>
-                <li><a href="{{ url_for('users.pendientes')}}">Pendientes</a></li>
-                <li><a href="{{ url_for('users.notas')}}">Notas</a></li>
-                <li><a href="{{ url_for('users.perfil') }}">Perfil</a></li>
-                <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-            </ul>
-        </nav>
-        
-    </header>
+            <h1 >DREAMNOTE</h1>
+            <li><a href="{{ url_for('users.home')}}">Home</a></li>
+            <li><a href="{{ url_for('users.pendientes')}}">Pendientes</a></li>
+            <li><a href="{{ url_for('users.notas')}}">Notas</a></li>
+            <li><a href="{{ url_for('users.perfil') }}">Perfil</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        </ul>
+    </nav>
+    
+</header>
+<body>
+    
     {% block bodycontent%}
     {% endblock %}
 </body>
+
+
 </html>
