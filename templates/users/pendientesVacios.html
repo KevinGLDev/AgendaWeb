@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{%block customcss%}
+<link rel="stylesheet" href="../../static/Users/pendientes.css">
+{% endblock %}
+  
+
+{% block bodycontent%}
+    <div class="bg">
+    <video src="../../static/recursos/pexels-payton-tuttle-10493080.mp4" muted autoplay loop></video>
+    </div>
+    
+    
+    <div class = "div-info">
+        <h1>LISTA DE PENDIENTES VACIA, POR FAVOR CREE UNO</h1>
+
+        <div class="div-btn">
+            <a href="{{ url_for('slopes.registerSlopes')}}"><input class="btn" type = "button" value="Crear Pendientes"></a>
+        </div>
+        
+    </div>
+
+{% endblock %}
+

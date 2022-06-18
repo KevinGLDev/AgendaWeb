@@ -31,6 +31,29 @@
                 <p class="block">
                     Grado de Importancia: 
                     {{item.importance}}</p>
+
+                    {% if item.importance == 'Alto' %}
+                        <style>
+                            .content{
+                                box-shadow: 0 0 20px 0 rgba(215, 14, 4, 0.904);
+                            }
+                        </style>
+                    {% endif %}
+                    {% if item.importance == 'Normal' %}
+                        <style>
+                            .content{
+                                box-shadow: 0 0 20px 0 rgba(1, 43, 210, 0.904);
+                            }
+                        </style>
+                    {% endif %}
+                    {% if item.importance == 'Bajo' %}
+                        <style>
+                            .content{
+                                box-shadow: 0 0 20px 0 rgba(20, 212, 139, 0.247);
+                            }
+                        </style>
+                    {% endif %}
+
                 <a href="{{ url_for('slopes.update',id = item.id)}}"><input class="btn" type = "button" value="Editar"></a>
                 <a href="{{ url_for('slopes.delete',id = item.id)}}"><input class="btn" type = "button" value="Eliminar"></a>
             </div>

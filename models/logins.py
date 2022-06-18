@@ -10,7 +10,7 @@ class Logins():
             
             if verified_user.first() != None:                
 
-                new_user = Users(verified_user[0].id,verified_user[0].username,Users.check_password(verified_user[0].password,user.password),verified_user[0].fullname,verified_user[0].email)
+                new_user = Users(verified_user[0].id,verified_user[0].username,Users.check_password(verified_user[0].password,user.password),verified_user[0].fullname,verified_user[0].email,verified_user[0].area,verified_user[0].nivel)
                 
                 return new_user
             else:
@@ -29,7 +29,7 @@ class Logins():
             if verified_user.first() != None:   
                             
                 
-                return Users(verified_user[0].id,verified_user[0].username,None,verified_user[0].fullname,verified_user[0].email)
+                return Users(verified_user[0].id,verified_user[0].username,None,verified_user[0].fullname,verified_user[0].email,verified_user[0].area,verified_user[0].nivel)
                
             else:
                 

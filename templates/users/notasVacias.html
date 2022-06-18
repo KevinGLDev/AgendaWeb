@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{%block customcss%}
+<link rel="stylesheet" href="../../static/Users/pendientes.css">
+{% endblock %}  
+
+{% block bodycontent%}
+
+    <div class="bg">
+    <video src="../../static/recursos/pexels-payton-tuttle-10493080.mp4" muted autoplay loop></video>
+    </div>
+    
+
+    
+
+    <div class="div-info">
+        <h1>LISTA DE NOTAS VACIA, POR FAVOR CREE UNA</h1>
+        <div class="div-btn">
+            <a href="{{ url_for('notes.registerNotes')}}"><input class="btn" type = "button" value="Crear Notas"></a>
+        
+    </div>
+
+{% endblock %}

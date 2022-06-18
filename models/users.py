@@ -9,13 +9,17 @@ class Users(db.Model,UserMixin):
     email = db.Column(db.String(100))
     password = db.Column(db.String(110)) 
     username = db.Column(db.String(100))
+    area = db.Column(db.String(30))
+    nivel = db.Column(db.String(30))
 
-    def __init__(self,id,username,password,fullname,email):
+    def __init__(self,id,username,password,fullname,email,area,nivel):
         self.id = id
         self.username= username
         self.fullname = fullname
         self.email = email
         self.password = password
+        self.area = area
+        self.nivel = nivel
         
 
     @classmethod

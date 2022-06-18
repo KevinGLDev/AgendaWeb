@@ -1,0 +1,7 @@
+Crear una aplicacion web tipo agenda, en donde el usuario cree su cuenta y en esta misma poder agregar
+eventos proximos (Tareas, Citas etc...) asi como tambien notas o recordatorios. Los eventos y los recordatorios 
+tendran su propio nivel de importancia o prioridad. Tambien cuando se acerque la fecha dada del evento se lanzara
+una notificacion al correo registrado de la persona.
+
+Dentro de la interfaz de la aplicacion el usuario podra modificar su perfil (Agrega/Cambiar foto, Cambiar nombre, contrasena etc..)
+Tambien habra 2 secciones o pestanas(Eventos, Notas) en donde el cliente podra ver sus registros en forma de lista tanto activos como desactivos por separado

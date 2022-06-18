@@ -21,7 +21,7 @@ def index():
 @auth.route('/login',methods = ['GET','POST'])
 def login():
     if request.method == 'POST':
-        user = Users(0,request.form['username'],request.form['password'],'','')
+        user = Users(0,request.form['username'],request.form['password'],'','','','')
         logged_user = Logins.login(user)
         if logged_user != None:
             if logged_user.password:
@@ -47,10 +47,12 @@ def register():
         password = request.form['password']
         fullname = request.form['fullname']
         email = request.form['email']
+        area = request.form['area']
+        nivel = request.form['nivel']
 
         password_hashed = Users.generate_password(password)
 
-        new_user = Users(0,username,password_hashed,fullname,email)
+        new_user = Users(0,username,password_hashed,fullname,email,area,nivel)
         db.session.add(new_user)
         db.session.commit()
         flash("Seccessful Registration")

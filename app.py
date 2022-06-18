@@ -13,7 +13,7 @@ login_mannager_app.login_message_category = 'info'
 def create_app():
 
         app = Flask(__name__)
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost/agenda_web'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost/agenda_web_v2'
         app.config['SQLALCHEMY_TRACK_modifications'] = False
         app.config['SECRET_KEY'] = 'B!1weNAt1T^%kvhUI*S^'
         login_mannager_app.init_app(app)
